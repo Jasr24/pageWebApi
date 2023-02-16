@@ -7,7 +7,7 @@ import { map, Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class LoginServiceService {
+export class LoginService {
 
   private baseUrl: string = environment.baseUrl;
 
@@ -31,7 +31,8 @@ export class LoginServiceService {
 
   //Este metodo nos permite saber si el usuario se encuentra logueado
   public isLoggeddIn(): boolean {
-    let token = localStorage.getItem('user');
+    let user = localStorage.getItem('user');
+    let token = (user != null) ? JSON.parse(user!).userToken : null;
     if(token == null || token == undefined || token == ''){
       return false;
     }else{

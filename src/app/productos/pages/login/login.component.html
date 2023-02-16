@@ -10,22 +10,22 @@
           
           <form (ngSubmit) = formSubmit() 
                 autocomplete="off" 
-                [formGroup]="miFormulario">
+                [formGroup]="form">
 
-            <div class="container text-center">
-              <input type="text"
-                    class="full-width input"
-                    formControlName="user"
-                    matInput
-                    placeholder="Digite su nombre de usuario">
+            <div class="container text-center input"> 
+                    <mat-form-field appearance="outline">
+                      <mat-label>Digite su nombre de usuario</mat-label>
+                      <input matInput placeholder="pat@example.com" formControlName="user" >
+                      <mat-error *ngIf="form.get('user')?.invalid">Escriba un usuario</mat-error>
+                    </mat-form-field>
             </div>
-              
-            <div class="container text-center">
-              <input type="password"
-              class="full-width input"
-              formControlName="password"
-              matInput
-              placeholder="Digite su contraseña">
+                    
+            <div class="container text-center input"> 
+                    <mat-form-field appearance="outline">
+                      <mat-label>Digite su contraseña</mat-label>
+                      <input type="password" matInput placeholder="" formControlName="password" >
+                      <mat-error *ngIf="form.get('password')?.invalid">Escriba un usuario</mat-error>
+                    </mat-form-field>
             </div>
             
             <div class="container text-center buttons">

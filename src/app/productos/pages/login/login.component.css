@@ -5,7 +5,7 @@
 }
 
 .card{
-    padding: 3rem 0;
+    padding: 2.5rem 0 1rem 0;
 }
 
 .titulo{
@@ -13,25 +13,17 @@
     font-weight: 500;
 }
 
-.full-width {
+
+mat-form-field {
     width: 100%;
 }
 
-.input {
-    width: 100%;
-    border-radius: 5px;
-    border-color: rgb(196, 203, 209);
-    padding: 0.5rem;
-    margin: 0.5rem 0;
-    font-size: 1rem;
-}
-
-.input:hover  {
-    border-color: #3f51b5;
+.input  {
+    margin-top: 0.8rem;
 }
 
 .buttons {
-    margin-top: 2rem;
+    margin-top: 1.2rem; 
     display: flex;
     justify-content: space-around;
 }

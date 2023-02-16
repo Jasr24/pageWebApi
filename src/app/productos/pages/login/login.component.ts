@@ -3,8 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
-import { ILoginData, IResponse } from '../../interfaces/login-data.interface';
-import { LoginServiceService } from '../../services/login-service.service';
+import { LoginService } from '../../services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -13,53 +12,33 @@ import { LoginServiceService } from '../../services/login-service.service';
 })
 export class LoginComponent {
 
-
-  miFormulario: FormGroup = this.fb.group({
-    user: [ ],
-    password: [ ]
+  form: FormGroup = this.fb.group({
+    user: [ '1075258635', Validators.required ],
+    password: ['testProximate', Validators.required]
   });
-  
-  loginData:ILoginData = {
-    user: "",
-    password: ""
-  };
-  
+    
   constructor ( private snack: MatSnackBar,
-                private loginService: LoginServiceService,
+                private loginService: LoginService,
                 private router: Router,                
                 private fb: FormBuilder,
-                private spinner: NgxSpinnerService) {}
-
+                private spinner: NgxSpinnerService) {
+    // si esta logueado enviamos al main
+    if(this.loginService.isLoggeddIn()){
+      this.router.navigate(['main']);
+    }
+  }
 
   formSubmit() {
 
-    this.spinner.show();
+    this.form.markAllAsTouched();
+    this.form.get('user')?.setValue(this.form.get('user')?.value.trim())
+    this.form.get('password')?.setValue(this.form.get('password')?.value.trim())
 
-    //Verificamos si los datos son null y suprimimos espacions al inicio y final
-    this.loginData.user = (this.miFormulario.get('user')?.value != null) 
-                              ? (this.miFormulario.get('user')?.value).trim() : null;
-    this.loginData.password = (this.miFormulario.get('password')?.value != null) 
-                              ? (this.miFormulario.get('password')?.value).trim() : null;
-
-    //Verificamos si se escribio el usuario en el formulario                     
-    if(this.loginData.user == null || this.loginData.user == ''){
-      this.spinner.hide();
-      this.snack.open('El nombre de usuario es requerido!' , 'Aceptar',{
-        duration:3000
-      })
-      return;
-    } 
-  
-    //Verificamos si se escribio la contraseña en el formulario  
-    if(this.loginData.password == null || this.loginData.password == ''){
-      this.spinner.hide();
-      this.snack.open('La contraseña es requerida!' , 'Aceptar',{
-        duration:3000
-      })
-      return;
-    }
-
-     this.loginService.obtenerData(this.loginData)
+    if(this.form.invalid)
+      return; 
+     
+     this.spinner.show();
+     this.loginService.obtenerData(this.form.getRawValue())
         .subscribe ( res =>{
 
           //si no coinciden las credenciales mostramos el mensaje que recibimos del servicio
@@ -74,9 +53,9 @@ export class LoginComponent {
           //Almacenamos los datos en el localStorage 
           this.loginService.loginUser(res.data);
 
-          //Navegamos al home de la pagina
+          //Navegamos al main de la pagina
           this.spinner.hide();
-          this.router.navigate(['home']);
+          this.router.navigate(['main']);
 
         }, (error) => {
           console.log(error);
