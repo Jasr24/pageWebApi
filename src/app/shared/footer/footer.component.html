@@ -1,0 +1,15 @@
+<div class="wrapper">
+
+    <div class="pie-pagina">
+        
+        <div class="links">
+            <div class="block" *ngFor="let linkObj of links">
+                <a [href]="linkObj.link" target="_blank">
+                    <span class="hover animate__animated animate__rubberBand" [innerHTML]="linkObj.icon"></span>
+                </a>
+            </div>
+        </div>
+        
+    </div>
+    <p>Ⓓ Desarrollado por José Andres Saavedra Romero</p>
+</div>

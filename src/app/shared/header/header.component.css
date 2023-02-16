@@ -1,0 +1,20 @@
+.wrapper{
+    min-height: 15vh;
+}
+
+.header{
+    padding: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.img{
+    height: 70px;
+    width: auto;
+}
+
+.titulo{
+    text-align: center;
+    font-weight: bold;
+}

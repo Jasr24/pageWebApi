@@ -16,6 +16,7 @@ import {MatInputModule} from '@angular/material/input';
 import { LoginComponent } from './pages/login/login.component';
 import { MainComponent } from './pages/main/main.component';
 import { HomeComponent } from './pages/home/home.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { HomeComponent } from './pages/home/home.component';
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
+    SharedModule
   ]
 })
 export class ProductosModule { }

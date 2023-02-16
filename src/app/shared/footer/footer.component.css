@@ -1,0 +1,37 @@
+.wrapper{
+    min-height: 10vh;
+    background: linear-gradient(#f5f5f5, rgba(80, 61, 0, 0.329));
+}
+
+.pie-pagina{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.links{
+    display: flex;
+    justify-content: center;
+    font-size: 2.5rem;
+}
+
+.block{
+    padding: 0 2.5rem;
+}
+
+a{
+    color: rgba(151, 89, 7, 0.767)
+}
+
+.hover{
+    transition: 0.5s;
+}
+
+.hover:hover{
+    color: rgba(10, 10, 10, 0.719);
+}
+
+p{
+    text-align: center;
+    font-weight: bold;
+}
