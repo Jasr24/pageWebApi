@@ -15,15 +15,15 @@ export class LoginComponent {
 
 
   miFormulario: FormGroup = this.fb.group({
-    user: [ , Validators.required],
-    password: [ , Validators.required]
+    user: [ ],
+    password: [ ]
   });
   
   loginData:ILoginData = {
     user: "",
     password: ""
   };
-
+  
   constructor ( private snack: MatSnackBar,
                 private loginService: LoginServiceService,
                 private router: Router,                
@@ -41,7 +41,7 @@ export class LoginComponent {
     this.loginData.password = (this.miFormulario.get('password')?.value != null) 
                               ? (this.miFormulario.get('password')?.value).trim() : null;
 
-                              
+    //Verificamos si se escribio el usuario en el formulario                     
     if(this.loginData.user == null || this.loginData.user == ''){
       this.spinner.hide();
       this.snack.open('El nombre de usuario es requerido!' , 'Aceptar',{
@@ -49,7 +49,8 @@ export class LoginComponent {
       })
       return;
     } 
-
+  
+    //Verificamos si se escribio la contraseña en el formulario  
     if(this.loginData.password == null || this.loginData.password == ''){
       this.spinner.hide();
       this.snack.open('La contraseña es requerida!' , 'Aceptar',{
@@ -61,10 +62,7 @@ export class LoginComponent {
      this.loginService.obtenerData(this.loginData)
         .subscribe ( res =>{
 
-          // MOSTAR EL SPPINER //  OJO AL INCLUIR EL ERROR SEL SUBSCRIBE SE MARCA COMO DESHUSO
-          ///////////////// ///////////// ///////////////// //////////////// ///////////// ///
-
-          //Se realiza si no coinciden las credenciales
+          //si no coinciden las credenciales mostramos el mensaje que recibimos del servicio
           if(!res.status) {
             this.spinner.hide();
             this.snack.open(res.message, 'Aceptar',{

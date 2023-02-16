@@ -13,7 +13,7 @@ export class LoginServiceService {
 
   constructor(private http: HttpClient) { }
 
-  //Obtenemos el token
+  //Obtenemos la data de la peticion
   public obtenerData(loginData: ILoginData): Observable<IResponse<IUser>>{
     return this.http.post<any>(`${this.baseUrl}/login`,loginData)
       .pipe(
@@ -30,7 +30,7 @@ export class LoginServiceService {
   }
 
   //Este metodo nos permite saber si el usuario se encuentra logueado
-  public isLoggeddIn(){
+  public isLoggeddIn(): boolean {
     let token = localStorage.getItem('user');
     if(token == null || token == undefined || token == ''){
       return false;
@@ -40,10 +40,9 @@ export class LoginServiceService {
   }
 
   //Cerrar session y eliminar el token del localStorage
-  public logout(){
+  public logout(): boolean {
     localStorage.removeItem('user');
     return true;
   }
-
 
 }
