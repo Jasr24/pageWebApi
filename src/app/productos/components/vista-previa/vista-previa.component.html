@@ -1,0 +1,41 @@
+<!-- <mat-card *ngIf="producto" class="wrapper">
+    <img mat-card-image [src]="producto.image" alt="Imagen producto">
+
+    <mat-card-header>
+        <mat-card-title>{{producto.title}}</mat-card-title>
+        <mat-card-subtitle>{{producto.shortDescription}}</mat-card-subtitle>
+    </mat-card-header>
+
+</mat-card> -->
+
+
+
+
+
+<mat-card *ngIf="producto" class="wrapper" [routerLink]="['/main/detalle'+producto.path]">
+    <mat-card-header>
+      <mat-card-title-group>
+        <mat-card-title>{{producto.title}}</mat-card-title>
+      <!-- <mat-card-subtitle class="text">{{producto.shortDescription}}</mat-card-subtitle> -->
+    </mat-card-title-group>
+
+    </mat-card-header>
+    <mat-card-content class="text">
+        <div>
+            <img mat-card [src]="producto.image" class="img">
+        </div>
+      
+        {{producto.shortDescription}}</mat-card-content>
+        
+</mat-card>
+
+
+
+
+<!-- <mat-card class="wrapper">
+    <mat-card-title-group>
+      <mat-card-title>{{producto.title}}</mat-card-title>
+      <mat-card-subtitle class="text">{{producto.shortDescription}}</mat-card-subtitle>
+      <img mat-card-xl-image [src]="producto.image" class="img">
+    </mat-card-title-group>
+</mat-card> -->

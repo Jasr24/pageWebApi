@@ -4,6 +4,7 @@ import { HomeComponent } from './productos/pages/home/home.component';
 import { LoginComponent } from './productos/pages/login/login.component';
 import { AuthGuard } from './productos/services/auth.guard';
 import { MainComponent } from './productos/pages/main/main.component';
+import { DetalleProductoComponent } from './productos/components/detalle-producto/detalle-producto.component';
 
 const routes: Routes = [
   {
@@ -16,14 +17,18 @@ const routes: Routes = [
     component: MainComponent,
     children: [
       {
-        path: '',
+        path: 'home',
         component: HomeComponent
-      },    
+      },  
+      {
+        path: 'detalle/:id',
+        component: DetalleProductoComponent
+      }
     ]
   },  
   {
     path: '**',
-    redirectTo: 'main'
+    redirectTo: 'main/home'
   }
 ];
 

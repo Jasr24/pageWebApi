@@ -1,0 +1,17 @@
+.wrapper{
+    padding: 1rem;
+}
+
+.text{
+    text-align: justify;
+    padding-right: 0.5rem;
+}
+
+img{
+    width: auto;
+    max-height: 80px;
+}
+
+mat-card{
+    cursor: pointer;
+}

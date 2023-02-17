@@ -1,1 +1,11 @@
-<p>home works!</p>
+<div *ngIf="productos">
+
+    <div class="row">
+        <div *ngFor="let producto of productos" class="col-sm-12 col-md-6">
+            <app-vista-previa [producto]="producto"></app-vista-previa>
+            <br>
+        </div>
+    </div>
+
+
+</div>

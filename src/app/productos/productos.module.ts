@@ -17,13 +17,17 @@ import { LoginComponent } from './pages/login/login.component';
 import { MainComponent } from './pages/main/main.component';
 import { HomeComponent } from './pages/home/home.component';
 import { SharedModule } from '../shared/shared.module';
+import { VistaPreviaComponent } from './components/vista-previa/vista-previa.component';
+import { DetalleProductoComponent } from './components/detalle-producto/detalle-producto.component';
 
 
 @NgModule({
   declarations: [
     LoginComponent,
     MainComponent,
-    HomeComponent
+    HomeComponent,
+    VistaPreviaComponent,
+    DetalleProductoComponent
   ],
   imports: [
     CommonModule,

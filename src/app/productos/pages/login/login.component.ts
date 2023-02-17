@@ -55,12 +55,12 @@ export class LoginComponent {
 
           //Navegamos al main de la pagina
           this.spinner.hide();
-          this.router.navigate(['main']);
+          this.router.navigate(['main/home']);
 
         }, (error) => {
           console.log(error);
           this.spinner.hide();
-          this.snack.open('Ha ocurrido un error, Vuelva a intentarlo', 'Aceptar',{
+          this.snack.open('Ha ocurrido un error, Vuelva a intentarlo mas tarde', 'Aceptar',{
             duration: 3000
           })
         } );
