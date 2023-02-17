@@ -1,3 +1,63 @@
 .wrapper{
-    min-height: 75vh;
+    min-height: 90vh !important;
+}
+
+.toolbar{
+    color: var(--color-tblanco);
+    background-color: var(--color-btoolbar);
+}
+
+.img{
+    height: 100%;
+    width: auto;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.titulo{
+    text-align: center;
+    margin: auto 0;
+}
+
+/*Si es pantalla pequeña hacer el titulo mas pequño*/
+@media (max-width: 375px) {
+
+    .img{
+        height: 80%;
+        width: auto;
+    }
+    
+    .titulo{
+        font-size: 1rem;
+        line-height: 1rem;
+        overflow: visible;
+        white-space: pre-wrap;
+    }
+}
+
+.sindenavCustom{
+    min-height: 90vh !important;
+}
+
+.sidenav{
+    background-color: var(--color-bp1);
+}
+
+.active{
+    background-color: var(--color-bp2);
+    
+}
+
+.active span{
+    font-weight: 600 ;
+}
+
+.container{
+    padding: 10px 20px 10px 20px;
+}
+
+span{
+    color: var(--color-tblanco);
 }

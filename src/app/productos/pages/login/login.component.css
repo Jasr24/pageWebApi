@@ -8,6 +8,12 @@
     padding: 2.5rem 0 1rem 0;
 }
 
+img{
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+}
+
 .titulo{
     font-size: 1.6rem;
     font-weight: 500;
@@ -26,4 +32,14 @@ mat-form-field {
     margin-top: 1.2rem; 
     display: flex;
     justify-content: space-around;
+}
+
+.mat-mdc-raised-button.mat-primary {
+    --mdc-protected-button-container-color: var(--color-bp1);
+    --mdc-protected-button-label-text-color: var(--color-tblanco);
+}
+
+.mat-mdc-raised-button.mat-accent {
+    --mdc-protected-button-container-color: var(--color-bp2);
+    --mdc-protected-button-label-text-color: var(--color-tblanco);
 }

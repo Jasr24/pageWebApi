@@ -13,24 +13,24 @@
     display: flex;
     justify-content: center;
     margin: 0.5rem 0;
-    border-radius: 50px;
+    border-radius: 15px;
 }
 
 .image{
     max-height: 17rem;
     width: auto;
     padding: 0.8rem;
-    background-color: rgba(128, 128, 128, 0.178);
-    box-shadow: inset 5em 1em rgba(128, 128, 128, 0.37);
+    background-color: var(--color-bdetallepro);
+    box-shadow: inset 5em 1em var(--color-sombre-detalle);
 }
 
 .descripcion{
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     text-align: justify;
     font-size: 1.1rem;
 }
 
-.botton{
-    color: white;
-    background: rgba(3, 3, 3, 0.712);
+.mat-mdc-raised-button:not(:disabled) {
+    color: var(--color-tblanco);
+    background: var(--color-b-botton);
 }

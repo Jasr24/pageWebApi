@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from '../app-routing.module';
+import { BrowserModule } from '@angular/platform-browser';
 
 
 //Angular material
@@ -11,6 +12,12 @@ import { MatCardModule } from '@angular/material/card'
 import { MatButtonModule } from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import { MatToolbarModule } from '@angular/material/toolbar'
+import { MatSidenavModule } from '@angular/material/sidenav'
+import { MatIconModule } from '@angular/material/icon'
+import { MatListModule } from '@angular/material/list';
+import { MatDialogModule } from '@angular/material/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 //Componentes 
 import { LoginComponent } from './pages/login/login.component';
@@ -19,6 +26,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { SharedModule } from '../shared/shared.module';
 import { VistaPreviaComponent } from './components/vista-previa/vista-previa.component';
 import { DetalleProductoComponent } from './components/detalle-producto/detalle-producto.component';
+import { DialogConfirmComponent } from './components/dialog-confirm/dialog-confirm.component';
 
 
 @NgModule({
@@ -27,7 +35,8 @@ import { DetalleProductoComponent } from './components/detalle-producto/detalle-
     MainComponent,
     HomeComponent,
     VistaPreviaComponent,
-    DetalleProductoComponent
+    DetalleProductoComponent,
+    DialogConfirmComponent
   ],
   imports: [
     CommonModule,
@@ -39,7 +48,14 @@ import { DetalleProductoComponent } from './components/detalle-producto/detalle-
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
-    SharedModule
-  ]
+    SharedModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
+    MatDialogModule,
+    BrowserAnimationsModule,
+    BrowserModule
+  ] 
 })
 export class ProductosModule { }

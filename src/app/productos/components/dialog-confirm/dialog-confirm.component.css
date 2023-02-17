@@ -1,0 +1,19 @@
+.wrapper{
+    background-color: var(--color-b-logout);
+}
+
+.botones{
+    justify-content: space-around;
+}
+
+span{
+    color: var(--color-tblanco);
+}
+
+.cancelar{
+    background-color: var(--color-b-cancelar);
+}
+
+.confirmar{
+    background-color: var(--color-b-confirmar);
+}

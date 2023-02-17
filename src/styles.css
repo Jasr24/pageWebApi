@@ -1,5 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
 
+:root {
+    --color-tblanco: #ffffff;
+    --color-bp1: #33322f;
+    --color-bp2: #D7960C;
+    --color-btoolbar: rgba(0, 0, 0, 0.925);
+    --color-hober: #33322f46;
+    --color-btprevia: rgba(128, 128, 128, 0.37);
+    --color-bdetallepro: rgba(128, 128, 128, 0.178);
+    --color-sombre-detalle: rgba(128, 128, 128, 0.37);
+    --color-b-botton: rgba(3, 3, 3, 0.712);
+    --color-b-logout: rgb(226, 226, 226);
+    --color-b-cancelar: #33322f;
+    --color-b-confirmar: #d7860c;
+}
+
 html, body { height: 100%; }
 body { 
     margin: 0; 

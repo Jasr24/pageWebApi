@@ -7,7 +7,6 @@
             <button *ngFor="let item of userData.menu; let i=index" 
                     [routerLink]="'detalle' + item.redirectTo" 
                     routerLinkActive="active" 
-                    class="button"
                     mat-list-item>
                 {{userData.products[i].title}} <!-- <mat-icon mat-list-icon>{{item.icon}}</mat-icon>Inicio --> 
             </button>
