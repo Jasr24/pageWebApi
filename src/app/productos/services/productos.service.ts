@@ -22,7 +22,10 @@ export class ProductosService {
 
     this.getProductos()
       .subscribe(res => {
-        this.productos$.next(res.data);
+        //Si existe la data
+        if(res.data){
+          this.productos$.next(res.data);
+        }
       });
 
   }
@@ -41,7 +44,5 @@ export class ProductosService {
   public obtenerData(): Observable<IProductos> {
     return this.productos$.asObservable();
   }
-
-
 
 }
