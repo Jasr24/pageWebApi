@@ -1,6 +1,7 @@
 .wrapper{
+    padding-top: 0.5rem;
     min-height: 10vh;
-    background: linear-gradient(#f5f5f5, rgba(80, 61, 0, 0.329));
+    background: linear-gradient(var(--color-bp1), var(--color-b1footer));
 }
 
 .pie-pagina{
@@ -20,7 +21,7 @@
 }
 
 a{
-    color: rgba(151, 89, 7, 0.767)
+    color: var(--color-bp2);
 }
 
 .hover{
@@ -28,10 +29,10 @@ a{
 }
 
 .hover:hover{
-    color: rgba(10, 10, 10, 0.719);
+    color: var(--color-tblanco);
 }
 
 p{
+    color: var(--color-tblanco);
     text-align: center;
-    font-weight: bold;
 }

@@ -13,6 +13,7 @@
     --color-b-logout: rgb(226, 226, 226);
     --color-b-cancelar: #33322f;
     --color-b-confirmar: #d7860c;
+    --color-b1footer: rgba(0, 0, 0, 0.925);
 }
 
 html, body { height: 100%; }
