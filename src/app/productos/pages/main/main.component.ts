@@ -1,4 +1,4 @@
-import { Component, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, ViewChild,  AfterViewChecked } from '@angular/core';
 import { LoginService } from '../../services/login.service';
 import { Router } from '@angular/router';
 import { IProductos } from '../../interfaces/data.interface';
@@ -7,13 +7,14 @@ import { MatDialog } from '@angular/material/dialog';
 import { DialogConfirmComponent } from '../../components/dialog-confirm/dialog-confirm.component';
 import { MatSidenav } from '@angular/material/sidenav';
 import { BreakpointObserver } from '@angular/cdk/layout';
+import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css']
 })
-export class MainComponent  implements AfterViewInit{
+export class MainComponent  implements  AfterViewChecked{
   
   @ViewChild
   (MatSidenav)
@@ -26,27 +27,24 @@ export class MainComponent  implements AfterViewInit{
               private router: Router,
               private productosService: ProductosService,
               private dialogo: MatDialog,
-              private observer: BreakpointObserver
+              private observer: BreakpointObserver,
+              private cdRef:ChangeDetectorRef
               ) {
-
       this.productosService.obtenerData()
       .subscribe (res => {
         this.userData = res;
       });
-
-
   }
-
-  ngAfterViewInit(){
+  
+  ngAfterViewChecked(): void {    
     this.observer.observe(['(max-width: 600px)']).subscribe((res) => {
       if (res.matches) {
         this.viewSidenav.mode = 'over';
-        this.viewSidenav.close();
       } else {
         this.viewSidenav.mode = 'side';
-        this.viewSidenav.open();
       }
     });
+    this.cdRef.detectChanges();
   }
 
   logout() {

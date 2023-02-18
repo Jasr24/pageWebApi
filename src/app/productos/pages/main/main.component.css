@@ -22,7 +22,7 @@
 }
 
 /*Si es pantalla pequeña hacer el titulo mas pequño*/
-@media (max-width: 375px) {
+@media (max-width: 600px) {
 
     .img{
         height: 80%;

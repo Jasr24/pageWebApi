@@ -14,11 +14,11 @@
         </mat-toolbar-row>
     </mat-toolbar>
     <mat-sidenav-container class="sindenavCustom">
-        <mat-sidenav class="sidenav" #sidenav>
+        <mat-sidenav class="sidenav" #sidenav opened>
             <mat-nav-list>
                 <a mat-list-item 
                         [routerLink]="'home'" 
-                        routerLinkActive="active"                         >
+                        routerLinkActive="active" >
                     <span>Inicio</span>                    
                 </a> 
                 <a *ngFor="let item of userData.menu; let i=index" 
