@@ -1,8 +1,8 @@
 <div *ngIf="productos">
 
-    <div class="row">
-        <div *ngFor="let producto of productos" class="col-sm-12 col-md-6">
-            <app-vista-previa [producto]="producto"></app-vista-previa>
+    <div class="container-imagenes">
+        <div *ngFor="let producto of productos">
+            <app-vista-previa [producto]="producto" class="card"></app-vista-previa>
             <br>
         </div>
     </div>

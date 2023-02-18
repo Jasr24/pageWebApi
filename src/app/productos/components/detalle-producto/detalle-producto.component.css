@@ -24,6 +24,18 @@
     box-shadow: inset 5em 1em var(--color-sombre-detalle);
 }
 
+@media (max-width: 600px) {
+    .image{
+        max-width: 17rem;
+    }    
+}
+
+@media  (min-width: 600px) and (max-width: 890px) {
+    .image{
+        max-width: 23rem;
+    }    
+}
+
 .descripcion{
     margin-top: 0.5rem;
     text-align: justify;

@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IProduct } from '../../interfaces/data.interface';
 import { ProductosService } from '../../services/productos.service';
-import { ActivatedRoute, Router } from '@angular/router';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-detalle-producto',
@@ -21,8 +20,6 @@ export class DetalleProductoComponent implements OnInit {
 };
 
   constructor(private productosService: ProductosService,
-              private snack: MatSnackBar,
-              private router: Router,
               private activateRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -41,14 +38,7 @@ export class DetalleProductoComponent implements OnInit {
                   this.producto = fProduct;
                 }  
             })                  
-      },
-      /*error => {
-        console.log(error);
-        this.snack.open('El producto no existe en la base de datos', 'Redireccionando...', {
-          duration: 2000
-        });
-        this.router.navigate(['main/home']);
-      }*/)
+      })
 
   }
 
