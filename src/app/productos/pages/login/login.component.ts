@@ -13,8 +13,8 @@ import { LoginService } from '../../services/login.service';
 export class LoginComponent {
 
   form: FormGroup = this.fb.group({
-    user: [ '1075258635', Validators.required ],
-    password: ['testProximate', Validators.required]
+    user: [ '', Validators.required ],
+    password: ['', Validators.required]
   });
     
   constructor ( private snack: MatSnackBar,
