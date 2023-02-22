@@ -12,7 +12,7 @@ const routes: Routes = [
     component: LoginComponent
   },
   {
-    path: 'main',
+    path: '',
     canActivate: [AuthGuard],
     component: MainComponent,
     children: [
@@ -23,12 +23,16 @@ const routes: Routes = [
       {
         path: 'detalle/:id',
         component: DetalleProductoComponent
+      },
+      {
+        path: '**',
+        redirectTo: 'home'
       }
     ]
   },  
   {
     path: '**',
-    redirectTo: 'main/home'
+    redirectTo: ''
   }
 ];
 

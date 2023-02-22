@@ -13,8 +13,8 @@ import { LoginService } from '../../services/login.service';
 export class LoginComponent {
 
   form: FormGroup = this.fb.group({
-    user: [ '', Validators.required ],
-    password: ['', Validators.required]
+    user: [ '1075258635', Validators.required ],
+    password: ['testProximate', Validators.required]
   });
     
   constructor ( private snack: MatSnackBar,
@@ -24,7 +24,7 @@ export class LoginComponent {
                 private spinner: NgxSpinnerService) {
     // si esta logueado enviamos al main
     if(this.loginService.isLoggeddIn()){
-      this.router.navigate(['main']);
+      this.router.navigate(['']);
     }
   }
 
@@ -53,9 +53,9 @@ export class LoginComponent {
           //Almacenamos los datos en el localStorage 
           this.loginService.loginUser(res.data);
 
-          //Navegamos al main de la pagina
+          //Navegamos al home de la pagina
           this.spinner.hide();
-          this.router.navigate(['main/home']);
+          this.router.navigate(['']);
 
         }, (error) => {
           console.log(error);

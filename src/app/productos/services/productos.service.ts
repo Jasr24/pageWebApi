@@ -13,22 +13,24 @@ export class ProductosService {
   private baseUrl: string = environment.baseUrl;
   private userToken: string = JSON.parse(localStorage.getItem('user')!).userToken;
 
-
-  private productos$ = new BehaviorSubject<IProductos>({ products: [], menu: [] });
+  //$ al final es una nomenclatura para observables
+  private productos$ = new BehaviorSubject<IProductos>({ products: [], menu: [] }); //Crea un
 
 
   constructor(private http: HttpClient) {
 
+    //Utiliza el patron observable
     this.getProductos()
       .subscribe(res => {
         //Si existe la data
         if(res.data){
-          this.productos$.next(res.data);
+          this.productos$.next(res.data); //Avisa a los demas que se encuentran subscritos
         }
     });
 
   }
 
+  //Obtenemos la data de la peticion con el token registrado
   private getProductos(): Observable<IResponse<IProductos>> {
     return this.http.post<any>(`${this.baseUrl}/getproducts`, { userToken: this.userToken })
       .pipe(
@@ -39,7 +41,6 @@ export class ProductosService {
       )
   }
 
-  //Obtenemos la data de la peticion con el token registrado
   public obtenerData(): Observable<IProductos> {
     return this.productos$.asObservable();
   }
